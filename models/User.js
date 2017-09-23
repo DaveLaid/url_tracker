@@ -8,45 +8,60 @@ var UserSchema = new Schema({
   
   fullname: {
     type: String,
-    required: true
+    trim: true,
+    required: "Full Name field is required."
   },
 
   email: {
     type: String,
-    required: true,
-    unique: true
+    required: "E-mail is required.",
+    unique: true,
+    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
   },
 
   password: {
     type: String,
-    required: true
+    trim: true,
+    required: "Password is required.",
+    validate: [
+      function(input) {
+        return input.length >= 6;
+      },
+      "Password should be at least 6 characters."
+    ]
   },
 
-  category: {
-    type: String,
-    [{
-    site: [{
-      url: {
-        type: String,
-        required: true
-      },
-      title: {
-        type: String
-      },
-      note: {
-        type: String
-      },
-      screenshot: {
-        type: String
-      },
-      logo: {
-        type: String
-      },
-      dateAdded: new Date()
-
-    }]}
-
+  site: [{
+    url: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String
+    },
+    category: {
+      type: String,
+      default: "Undefined"
+    },
+    note: {
+      type: String
+    },
+    screenshot: {
+      type: String
+    },
+    logo: {
+      type: String
+    },
+    dateAdded: {
+      type: Date,
+      default: Date.now
+    },
+    deleted: {
+      type: Boolean,
+      default: false
+    }
   }]
+  
 
 });
 
