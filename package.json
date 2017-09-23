@@ -1,14 +1,31 @@
 {
-  "name": "react-article-search",
+  "name": "url-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Website / extension to help users keep track of bookmarks with URLs, categories, screenshots, and notes.",
   "main": "public/index.html",
+  "engines": {
+    "node": "6.11.0",
+    "npm": "3.10.10"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -w"
   },
-  "author": "Ahmed Haque",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaveLaid/url_tracker.git"
+  },
+  "keywords": [
+    "URL",
+    "Tracker",
+    "Bookmark"
+  ],
+  "author": "Team M.A.D.",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaveLaid/url_tracker/issues"
+  },
+  "homepage": "https://github.com/DaveLaid/url_tracker#readme",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.1",
