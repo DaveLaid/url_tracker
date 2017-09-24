@@ -3,7 +3,7 @@ var express = require("express");
 var bluebird = require("bluebird");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
-
+var mongojs = require("mongojs");
 var mongoose = require("mongoose");
 mongoose.Promise = bluebird;
 mongoose.Promise = Promise;
@@ -101,6 +101,45 @@ app.post("/submit", function(req, res) {
 
 
 
+// Route to post our form submission to mongoDB via mongoose
+app.post("/newuser", function(req, res) {
+
+  // We use the "User" class we defined above to check our req.body against our user model
+  var newUser = new User(req.body);
+
+  // With the new "Example" object created, we can save our data to mongoose
+  // Notice the different syntax. The magic happens in userModel.js
+  newUser.save(function(error, doc) {
+    // Send any errors to the browser
+    if (error) {
+      res.send(error);
+    }
+    // Otherwise, send the new doc to the browser
+    else {
+      res.send(doc);
+    }
+  });
+});
+
+
+
+// Retrieve results from mongo
+app.get("/all", function(req, res) {
+  // Find all notes in the notes collection
+  Site.find({}, function(error, found) {
+    // Log any errors
+    if (error) {
+      console.log(error);
+    }
+    // Otherwise, send json of the notes back to user
+    // This will fire off the success function of the ajax request
+    else {
+      res.json(found);
+    }
+  });
+});
+
+
 // This GET route let's us see the sites we have added
 app.get("/sites", function(req, res) {
   // Using our Site model, "find" every site in our urlTracker db
@@ -152,6 +191,59 @@ app.get("/populated", function(req, res) {
       }
     });
 });
+
+
+
+
+// Update fields of a site saved
+app.get("/updatesite/:id", function(req, res) {
+  // Update a doc in the "sites" collection with an ObjectId matching
+  // the id parameter in the url
+  Site.update({
+    "_id": mongojs.ObjectId(req.params.id)
+  }, {
+    // Set updated parameters for the site we specified
+    $set: { "url": req.params.url, "title": req.params.title, "category": req.params.category, "note": req.params.note, "screenshot": req.params.screenshot }
+
+  },
+  // When that's done, run this function
+  function(error, edited) {
+    // Show any errors
+    if (error) {
+      console.log(error);
+      res.send(error);
+    }
+    // Otherwise, send the result of our update to the browser
+    else {
+      console.log(edited);
+      res.send(edited);
+    }
+  });
+
+});
+
+
+
+// Delete One from the DB
+app.get("/delete/:id", function(req, res) {
+  // Remove a site using the objectID
+  Site.remove({
+    "_id": mongojs.ObjectID(req.params.id)
+  }, function(error, removed) {
+    // Log any errors from mongojs
+    if (error) {
+      console.log(error);
+      res.send(error);
+    }
+    // Otherwise, send the mongojs response to the browser
+    // This will fire off the success function of the ajax request
+    else {
+      console.log(removed);
+      res.send(removed);
+    }
+  });
+});
+
 
 
 

@@ -28,10 +28,6 @@ var SiteSchema = new Schema({
   dateAdded: {
     type: Date,
     default: Date.now
-  },
-  deleted: {
-    type: Boolean,
-    default: false
   }
 
 });
