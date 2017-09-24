@@ -1,13 +1,12 @@
-
-
+// Test - example of data
 {
    _id: 1234,
    fullname: "David Laidlaw",
    email: "david@david.com",
    password: "david",
-   site: 
+   category: 
       {
-         category: "Developer Tool",
+         site: "Developer Tool",
             {
                url: "www.google.com/abc",
                name: "Google website about searching",

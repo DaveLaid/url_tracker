@@ -31,43 +31,18 @@ var UserSchema = new Schema({
     ]
   },
 
-  site: [{
-    url: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String
-    },
-    category: {
-      type: String,
-      default: "Undefined"
-    },
-    note: {
-      type: String
-    },
-    screenshot: {
-      type: String
-    },
-    logo: {
-      type: String
-    },
-    dateAdded: {
-      type: Date,
-      default: Date.now
-    },
-    deleted: {
-      type: Boolean,
-      default: false
-    }
-  }]
-  
+  sites: [{
+      type: Schema.Types.ObjectId,
+      ref: "Site"
+    }]
 
 });
+
 
 // Create the User model with the UserSchema
 var User = mongoose.model("User", UserSchema);
 
-// Export the model
+// Export the models
 module.exports = User;
+
 
