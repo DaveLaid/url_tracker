@@ -21,7 +21,7 @@ var app = express();
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Make public a static dir
 app.use(express.static("public"));
@@ -44,28 +44,24 @@ mongoose.connect(db, function(error) {
 
 
 
-
-
 // We'll create a new user by using the User model as a class
 // The "unique" rule in the User model's schema will prevent duplicate users from being added to the server
-var exampleUser = new User({
-  fullname: "David Laidlaw",
-  email: "david@david.com",
-  password: "davidlaidlaw"
-});
-// Using the save method in mongoose, we create our example user in the db
-exampleUser.save(function(error, doc) {
-  // Log any errors
-  if (error) {
-    console.log(error);
-  }
-  // Or log the doc
-  else {
-    console.log(doc);
-  }
-});
-
-
+// var exampleUser = new User({
+//   fullname: "David Laidlaw",
+//   email: "david@david.com",
+//   password: "davidlaidlaw"
+// });
+// // Using the save method in mongoose, we create our example user in the db
+// exampleUser.save(function(error, doc) {
+//   // Log any errors
+//   if (error) {
+//     console.log(error);
+//   }
+//   // Or log the doc
+//   else {
+//     console.log(doc);
+//   }
+// });
 
 
 
@@ -134,48 +130,45 @@ app.get("/all", function(req, res) {
     // Otherwise, send json of the notes back to user
     // This will fire off the success function of the ajax request
     else {
+    	console.log("ALL ROUTE!")
       res.json(found);
+      // res.render('all', {users: found});
     }
   });
 });
 
-
-// This GET route let's us see the sites we have added
-app.get("/sites", function(req, res) {
-  // Using our Site model, "find" every site in our urlTracker db
-  Site.find({}, function(error, doc) {
-    // Send any errors to the browser
-    if (error) {
-      res.send(error);
-    }
-    // Or send the doc to the browser
-    else {
-      res.send(doc);
-    }
-  });
-});
 
 
 // Route to see what our user data looks in the browser
-app.get("/user", function(req, res) {
-  // Find all of the entries of User (there's only one example set up, remember!)
-  User.find({}, function(error, doc) {
-    // Send an error message to the browser
+app.get("/user/:id", function(req, res) {
+
+  User.update({
+    "_id": mongojs.ObjectId(req.params.id)
+  }, {
+    // Set updated user info once user edits their profile:
+    $set: { "fullname": req.params.fullname, "email": req.params.email, "password": req.params.password }
+  },
+  // When that's done, run this function
+  function(error, edited) {
+    // show any errors
     if (error) {
+      console.log(error);
       res.send(error);
     }
-    // Or send the doc to the browser
+    // Otherwise, send the result of our update to the browser
     else {
-      res.send(doc);
+      console.log(edited);
+      res.send(edited);
     }
   });
 });
 
 
+
 // Route to see what user looks like WITH populating
-app.get("/populated", function(req, res) {
+app.get("/populated/:id", function(req, res) {
   // Set up a query to find all of the entries in our User database..
-  User.find({})
+  User.find({"_id": mongojs.ObjectId(req.params.id)})
     // ..and string a call to populate the entry with the sites stored in the user's site array
     // This simple query is incredibly powerful. Remember this one!
     .populate("sites")
