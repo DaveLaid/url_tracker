@@ -2,14 +2,14 @@ import React from "react";
 import { Route, IndexRoute, Router, browserHistory } from "react-router";
 
 import Main from "../components/Main";
+import Home from "../components/Home";
 
 
 
 const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
-    {/*don't know if there will be another link from main page<Route path="favorites" component={Favorites} />*/}
-    <IndexRoute component={Main} />
+    	<IndexRoute component={Home} />
     </Route>
   </Router>
 );
