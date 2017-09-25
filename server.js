@@ -27,7 +27,7 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Make public a static dir
-app.use(express.static("public"));
+app.use(express.static("./public"));
 app.use("/", routes);
 
 
