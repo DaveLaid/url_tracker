@@ -33,12 +33,27 @@ body {
   border-radius:3px;
    }
 
+
+/*main section*/
+.mainSection{
+padding:0 !important;
+}
+
+.introSection{
+}
+.divider-wrapper{
+}
+
+.signUpSection{
+}
+
+
 /*divider*/
 
 .divider {
   width: 1px;
   background-color: #f3f3f3;
-  margin: 80px 0;
+  margin:10px 0;
 }
 
 
@@ -59,4 +74,5 @@ justify-content: center;
 
  @media only screen and (max-width: 960px) {
  .divider-wrapper {
-     display: none; } }
+     display: none; }
+}
