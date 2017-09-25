@@ -105,6 +105,7 @@ app.get('/login', function(req, res, next) {
 });
 
 
+
 // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
@@ -128,6 +129,26 @@ app.post("/api/signup", function(req, res) {
     //res.status(422).json(err.errors[0].message);
   });
 });
+
+// THE BELOW ROUTE IS ONLY IF THE ABOVE NEW USER ROUTE DOESN'T WORK!!!!!
+// Route to post our form submission to mongoDB via mongoose
+app.post("/newuser", function(req, res) {
+  // We use the "User" class we defined above to check our req.body against our user model
+  var newUser = new User(req.body);
+  // With the new "Example" object created, we can save our data to mongoose
+  // Notice the different syntax. The magic happens in userModel.js
+  newUser.save(function(error, doc) {
+    // Send any errors to the browser
+    if (error) { res.send(error); }
+    // Otherwise, send the new doc to the browser
+    else { res.send(doc); }
+  });
+});
+
+
+
+
+
 
 // Route for logging user out
 app.get("/logout", function(req, res) {
@@ -182,27 +203,6 @@ app.post("/submit", function(req, res) {
   });
 });
 
-
-
-// Route to post our form submission to mongoDB via mongoose
-app.post("/newuser", function(req, res) {
-
-  // We use the "User" class we defined above to check our req.body against our user model
-  var newUser = new User(req.body);
-
-  // With the new "Example" object created, we can save our data to mongoose
-  // Notice the different syntax. The magic happens in userModel.js
-  newUser.save(function(error, doc) {
-    // Send any errors to the browser
-    if (error) {
-      res.send(error);
-    }
-    // Otherwise, send the new doc to the browser
-    else {
-      res.send(doc);
-    }
-  });
-});
 
 
 
