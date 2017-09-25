@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/signin.css">
 </head>
 
 <body >
@@ -40,14 +40,14 @@
     </div>
   </section>
 
-  <!-- Log in -->
-  <section id="login">
+  <!-- sign in -->
+  <section id="signIn">
     <div class="container">
       <div class="row">
         <div class="col-md-5 mx-auto">
           <div class="card">
             <div class="card-header">
-              <h4>Login</h4>
+              <h4>Sign in</h4>
             </div>
             <div class="card-body">
               <form class="login" action="index.html">
@@ -57,13 +57,13 @@
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password-input" placeholder="Password" required>
+                  <input ype="password" class="form-control" id="password-input" placeholder="Password" required>
                 </div>
                 <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                   <span class="sr-only">Error:</span> <span class="msg"></span>
                 </div>
-                <input type="submit" class="btn btn-primary btn-block" value="Login">
+                <input type="submit" class="btn btn-primary btn-block" value="Sign in">
               </form>
             </div>
           </div>
@@ -93,12 +93,11 @@
   </footer>
 
 
-
+  <script type="text/javascript" src="js/login.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/navbar-fixed.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
 
 </body>
 </html>
