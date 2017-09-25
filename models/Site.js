@@ -10,7 +10,8 @@ var SiteSchema = new Schema({
     required: true
   },
   title: {
-    type: String
+    type: String,
+    required: true
   },
   category: {
     type: String,
