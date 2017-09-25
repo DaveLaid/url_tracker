@@ -8,6 +8,9 @@ var mongoose = require("mongoose");
 mongoose.Promise = bluebird;
 mongoose.Promise = Promise;
 
+var session = require("express-session");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
 var routes = require("./routes/routes");
 var User = require("./models/User.js");
