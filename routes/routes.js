@@ -96,42 +96,75 @@ app.post('/api/login', passport.authenticate('local', {
 // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
-app.post("/api/signup", function(req, res) {
-  //console.log("Got to /api/signup");
-  console.log(req.body);
-  User.save({
-    fullname: req.body.fullname,
-    email: req.body.email,
-    password: req.body.password
-  }).then(function() {
-    res.json("/create");
-    //res.redirect(307, "/create");
-  }).catch(function(err) {
-    console.log(" ");
-    console.log("Signup error due to duplicate entry: " + err);
-    console.log(" ");
-    res.send("Error_duplicate_entry_Use_back_browser_arrow_to_return_to_Login_page");
-    //res.send("/signup");
-    //res.json(err);
-    //res.status(422).json(err.errors[0].message);
-  });
-});
 
+// app.post("/api/signup", function(req, res) {
+//   //console.log("Got to /api/signup");
+//   User.save({
+//     fullname: req.body.fullname,
+//     email: req.body.email,
+//     password: req.body.password
+//   }).then(function() {
+//     res.json("/create");
+//     //res.redirect(307, "/create");
+//   }).catch(function(err) {
+//     console.log(" ");
+//     console.log("Signup error due to duplicate entry: " + err);
+//     console.log(" ");
+//     res.send("Error_duplicate_entry_Use_back_browser_arrow_to_return_to_Login_page");
+//     //res.send("/signup");
+//     //res.json(err);
+//     //res.status(422).json(err.errors[0].message);
+//   });
+// });
+
+// app.post("/api/signup", function(req, res) {
+//   var newUser = new User({
+//     fullname: req.body.fullname,
+//     email: req.body.email,
+//     password: req.body.password
+//   });
+//   // Using the save method in mongoose, we create our example user in the db
+//   newUser.save(function(error, doc) {
+//     // Log any errors
+//     if (error) {
+//       console.log(error);
+//     }
+//     // Or log the doc
+//     else {
+//       console.log(doc);
+//       res.send(doc);
+//     }
+//   });
+// });
 
 // THE BELOW ROUTE IS ONLY IF THE ABOVE NEW USER ROUTE DOESN'T WORK!!!!!
 // Route to post our form submission to mongoDB via mongoose
-app.post("/newuser", function(req, res) {
+app.post("/api/signup", function(req, res) {
   // We use the "User" class we defined above to check our req.body against our user model
-  var newUser = new User(req.body);
+  // var newUser = new User(req.body);
+  var newUser = new User({
+    fullname: req.body.fullname,
+    email: req.body.email,
+    password: req.body.password
+  });
+
+  console.log("REQ fullname: " + req.body.fullname);
+  console.log("REQ email: " + req.body.email);
+  console.log("REQ password: " + req.body.password);
   // With the new "Example" object created, we can save our data to mongoose
   // Notice the different syntax. The magic happens in userModel.js
   newUser.save(function(error, doc) {
     // Send any errors to the browser
-    if (error) { res.send(error); }
+    if (error) { 
+      res.send(error); 
+    }
     // Otherwise, send the new doc to the browser
-    else { res.send(doc); }
+    else { 
+      res.send(doc); 
+    }
   });
 });
+
 
 
 
@@ -164,23 +197,23 @@ app.post("/addsite", function(req, res) {
 
 
 
-// Retrieve results from mongo
-app.get("/all", function(req, res) {
-  // Find all notes in the notes collection
-  Site.find({}, function(error, found) {
-    // Log any errors
-    if (error) {
-      console.log(error);
-    }
-    // Otherwise, send json of the notes back to user
-    // This will fire off the success function of the ajax request
-    else {
-      console.log("ALL ROUTE!")
-      res.json(found);
-      // res.render('all', {users: found});
-    }
-  });
-});
+// // Retrieve ALL sites from mongo
+// app.get("/allsites", function(req, res) {
+//   // Find all notes in the notes collection
+//   Site.find({}, function(error, found) {
+//     // Log any errors
+//     if (error) {
+//       console.log(error);
+//     }
+//     // Otherwise, send json of the notes back to user
+//     // This will fire off the success function of the ajax request
+//     else {
+//       console.log("ALL ROUTE!")
+//       res.json(found);
+//       // res.render('all', {users: found});
+//     }
+//   });
+// });
 
 
 
@@ -211,11 +244,10 @@ app.get("/user/:id", function(req, res) {
 
 
 // Route to see what user looks like WITH populating
-app.get("/populated/:id", function(req, res) {
+app.get("/usersites/:id", function(req, res) {
   // Set up a query to find all of the entries in our User database..
   User.find({"_id": mongojs.ObjectId(req.params.id)})
     // ..and string a call to populate the entry with the sites stored in the user's site array
-    // This simple query is incredibly powerful. Remember this one!
     .populate("sites")
     // Now, execute that query
     .exec(function(error, doc) {
@@ -223,7 +255,7 @@ app.get("/populated/:id", function(req, res) {
       if (error) {
         res.send(error);
       }
-      // Or, send our results to the browser, which will now include the sites stored in the user document
+      // Or, send our results to the browser, which will now include the sites stored in the specific user document
       else {
         res.send(doc);
       }
