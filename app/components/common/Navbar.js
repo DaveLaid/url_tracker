@@ -49,10 +49,10 @@ class Navbar extends Component {
 
 				</div>
 				</nav>
-			</div>		
+			</div>
 
 			);
-				
+
 		}
 
 		else {
@@ -131,21 +131,21 @@ class Navbar extends Component {
 				   </ul>
 
 
-			</div>	
-			);   
-	
-		}		
-			
+			</div>
+			);
+
+		}
+
 	}
 
 	render(){
 
 	    return (
-	    	<div>	
+	    	<div>
 			{this.navButtons()}
 			</div>
 		);
-		
+
 	}
 }
 
