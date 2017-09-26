@@ -26,7 +26,7 @@
 
         <!-- sign up -->
           <button class="btn btn-primary btn-sm navBtnSignup"><li class="nav-item">
-            <a href="#" class="nav-link navBtnText"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Sign up</a>
+            <a href="signup.html" class="nav-link navBtnText"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Sign up</a>
           </li></button>
         </ul>
       </div>
@@ -51,14 +51,17 @@
               <h4>Login</h4>
             </div>
             <div class="card-body">
-              <form class="login" action="index.html">
+              <form class="login" action="/api/login" method="post">
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input id="email-input" type="email" class="form-control x" required>
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
+
                   <input type="password" class="form-control" id="password-input" required>
+
+     
                 </div>
                 <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>

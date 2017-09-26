@@ -5,6 +5,6 @@ module.exports = function(req, res, next) {
     return next();
   }
 
-  // If the user isnt' logged in, redirect them to the Flashy home page
-  return res.redirect("/index");
+  // If the user isnt' logged in, redirect them to the home page
+  return res.redirect("/");
 };
