@@ -82,55 +82,6 @@ class Navbar extends Component {
 				    </div>
 				</nav>
 
-
-				  {/*<!-- Grey section -->*/}
-				  <section className="py-3 mb-4 bg-light">
-				    <div className="container">
-				      <div className="row"></div>
-				    </div>
-				  </section>
-
-				  {/*<!-- sign in -->*/}
-				  <section id="signIn">
-				    <div className="container">
-				      <div className="row">
-				        <div className="col-md-5 mx-auto">
-				          <div className="card">
-				            <div className="card-header">
-				              <h4>Sign up</h4>
-				            </div>
-				            <div className="card-body">
-				              <form action="index.html">
-				              	<div className="form-group">
-				                  <label for="name">Full Name</label>
-				                  <input type="text" className="form-control" />
-				                </div>
-				                <div className="form-group">
-				                  <label for="email">Email</label>
-				                  <input type="text" className="form-control" />
-				                </div>
-				                <div className="form-group">
-				                  <label for="password">Password</label>
-				                  <input type="password" className="form-control" />
-				                </div>
-				                <input type="submit" className="btn btn-primary btn-block" value="Sign in" />
-				              </form>
-				            </div>
-				          </div>
-				        </div>
-				      </div>
-				    </div>
-				</section>
-
-				<hr/>
-				    <ul className="account">
-				     <li id ="user"> Don't have an account?</li>
-
-				     <a href="#" id ="creatAcc"><li>Create account</li></a>
-				     <li id="copyRight">Copyright 2017 Bookmark Buddy. All rights reserved.</li>
-				   </ul>
-
-
 			</div>	
 			);   
 	
