@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Make public a static dir
 app.use(express.static("./public"));
-app.use("/", routes);
+
 
 // ... continue with Express.js app initialization ...
 app.use(require('connect-flash')()); // see the next section
@@ -48,6 +48,7 @@ mongoose.connect(db, function(error) {
   }
 });
 
+routes(app);
 
 
 // We'll create a new user by using the User model as a class
@@ -90,7 +91,7 @@ mongoose.connect(db, function(error) {
 // });
 
 app.post('/api/login', passport.authenticate('local', {
-  successRedirect: '/index',
+  successRedirect: '/',
   failureRedirect: '/login',
   failureFlash: true
 }));
