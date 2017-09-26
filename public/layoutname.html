@@ -7,7 +7,9 @@
   <title>Bookmark Buddy</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="icon" type="ico" href="img/favicon.ico">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -64,42 +66,33 @@
             <div class="card">
                 <table class="table">
                 <thead class="thead text-white">
-                  <tr>
-                    <th>#</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>URL</th>
-                    <th></th>
+                  <tr class="tableHead">
+                    <th style='vertical-align:middle'>#</th>
+                    <th style='vertical-align:middle'>Title</th>
+                    <th style='vertical-align:middle'>Category</th>
+                    <th style='vertical-align:middle'>URL</th>
+                    <th style='vertical-align:middle'></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td scope="row">1</td>
-                    <td>javascript</td>
-                    <td>Web Development</td>
-                    <td>www.code.com</td>
-                    <td><a href="#" class="btn btn-secondary">
-                      <i class="fa fa-angle-double-right"></i> Edit
-                    </a></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">2</td>
-                    <td>Algorithm</td>
-                    <td>Tech Gadgets</td>
-                    <td>www.code.com</td>
-                    <td><a href="#" class="btn btn-secondary">
-                      <i class="fa fa-angle-double-right"></i> Edit
-                    </a></td>
+                  <tr id="tableRowHolder" style='vertical-align:middle'>
+
+              <!--========= First Row - empty place holder =======-->
+
                   </tr>
                   <tr>
                     <td scope="row">1</td>
                     <td>javascript</td>
                     <td>Web Development</td>
-                    <td>www.code.com</td>
-                    <td><a href="#" class="btn btn-secondary">
-                      <i class="fa fa-angle-double-right"></i> Edit
-                    </a></td>
+                    <td><a href="#" class="aTable">www.code.com</a></td>
+                    <td>
+                      <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-share-square-o fa-lg" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+                    </td>
                   </tr>
+
+
                 </tbody>
               </table>
             </div>
@@ -109,7 +102,7 @@
     </section>
 
     <!-- footer -->
-      <footer id="main-footer" class="py-3 bg-primary text-white fixed-bottom">
+      <footer id="main-footer" class="py-3 bg-primary text-white fixed-bottom footerColor">
         <div class="container">
           <div class="row text-center">
             <div class="col-md-6 ml-auto">

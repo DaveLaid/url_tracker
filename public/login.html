@@ -7,8 +7,9 @@
   <title>Bookmark Buddy</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body >
@@ -53,11 +54,14 @@
               <form class="login" action="/api/login" method="post">
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input id="email-input" type="email" class="form-control" placeholder="Email" required>
+                  <input id="email-input" type="email" class="form-control x" required>
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input id="password-input" type="password" class="form-control"  placeholder="Password" required>
+
+                  <input type="password" class="form-control" id="password-input" required>
+
+     
                 </div>
                 <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -79,7 +83,7 @@
      <li id="copyRight">Copyright 2017 Bookmark Buddy. All rights reserved.</li>
    </ul>
 
-
+</section>
 
 <!-- footer -->
   <footer id="main-footer" class="py-3 bg-primary text-white fixed-bottom">

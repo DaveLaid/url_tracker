@@ -3,42 +3,54 @@ body {
   font-family: 'Roboto', sans-serif;
  }
 
+ /*============================*/
+   /*navbar - used in all pages */
+ /*============================*/
 
-/*navbar*/
 .navbar {
   box-shadow: 2px 2px 5px #3292a6;
   /*opacity: 0.9;*/
-  background: #fff; }
-  .navbar .nav-item {
-    font-size: 1.4rem;
-    padding-right: 20px;
-   }
+  background: #fff;
+ }
+
+.navbar .nav-item {
+  font-size: 1.4rem;
+  padding-right: 20px;
+  }
+
+/*text next to the logo*/
 .logoText{
   color:#3f4b50;
-}
-/*text ot btn*/
-.navBtnText{
-  color:white !important;
-  font-size:14px;
-}
+  }
 
-/*add and user btn*/
+/* text on all button on the navbar */
+  .navBtnText{
+    color:white !important;
+    font-size:14px;
+     }
+/*============================*/
+/*used only in main page*/
+/*============================*/
+
+/*Add and User button in the navbar*/
 .navBtn{
   height:45px;
-  width: 70px;
+  width:70px;
   margin-right:5px;
   border-radius:3px;
+  background-color:#3292a6!important;
 }
 
-/*log out Btn*/
+/*log out Button in the navbar*/
 .navBtnlogout{
   height:45px;
   width:100px;
   margin-right:5px;
   border-radius:3px;
+  background-color:#3292a6!important;
 }
 
-/*search*/
+/*----search-----*/
 #searchBarContainer{
 background-color:#393a3e;
 height:60px;
@@ -65,23 +77,23 @@ border:0px;
   font-size: 22px;
 }
 
-:focus::-webkit-input-placeholder {
-  opacity: 0.5;
+:focus::-webkit-input-placeholder{
+  opacity:0.5;
 }
 
-.searchButton {
+.searchButton{
 background-color:#393a3e;
 border:0px !important;
 margin-top: -10px !important;
 }
-
+/* FontAwesome icon for search*/
 .fa-search{
 color:#838386;
 /*font-size: 22px;
 padding-bottom: 5px;*/
 }
 
-/*modal*/
+/*-----modal-----*/
 .modal-header{
   border-top-left-radius:4px;
   border-top-right-radius:4px;
@@ -101,13 +113,166 @@ padding-bottom: 5px;*/
   border-radius: 3px !important;
 }
 
-/*table*/
+/*----table----*/
 thead{
   background-color: #393a3e;
+}
+tbody{
+color: #393a3e;
+}
+
+.tableHead{
+  height:60px !important;
+}
+.aTable{
+  color: #393a3e !important;
+}
+
+
+#tableRowHolder{
+ height:50px !important;
+}
+.fa-pencil-square-o{
+  color: #393a3e;
+  padding-right:2px;
+}
+.fa-share-square-o{
+  color: #393a3e;
+  padding-right:2px;
+}
+.fa-trash-o{
+  color: #393a3e;
 
 }
 
-/*footer*/
+/*============================*/
+  /*used only in login page*/
+/*============================*/
+
+/* signUp button on the navbar*/
+.navBtnSignup{
+  height:45px;
+  width:100px;
+  margin-right:5px;
+  border-radius:3px;
+  background-color:#3292a6!important;
+  }
+
+/*login Form */
+#login{
+  margin-top:4%;
+  margin-bottom:4%;
+
+}
+
+
+
+
+
+
+
+
+h4{
+  color:#6a6a6a;
+}
+
+/*last part of the login page*/
+li{
+  list-style-type:none;
+
+}
+
+.account{
+  margin-top:5px;
+}
+#user{
+  color:#838386;
+  font-size:14px;
+  text-align:center;
+   }
+#creatAcc{
+  color:#2c879c;
+  font-weight:bolder;
+  text-align:center;
+}
+#copyRight{
+  color:#838386;
+  font-size:12px;
+  text-align:center;
+}
+
+/*============================*/
+  /*used only in sign Up page*/
+/*============================*/
+
+/*signin botton on the nav bar*/
+.navBtnSignin{
+  height:45px;
+  width:100px;
+  margin-right:5px;
+  border-radius:3px;
+  background-color:#3292a6!important;
+  }
+
+.adjustpage{
+  margin-top:4%;
+}
+
+
+/*------main section------*/
+.mainSection{
+padding:0 !important;
+}
+
+/* 1/3 - introduction - leftside */
+.introSection{
+}
+
+/*2/3 - divider betwwen introduction and sign Up form */
+.divider-wrapper{
+flex: 1 1;
+align-self: stretch;
+display: flex;
+justify-content: center;
+}
+.divider{
+  width: 1px;
+  background-color: #f3f3f3;
+  margin:10px 0;
+}
+
+/*3/3 - sign up form- right side*/
+.signUpSection{
+}
+
+/*submitbutton*/
+.btn-primary{
+background-color:#3292a6!important;
+border-color:#3292a6!important;
+}
+
+/*---animated text*/
+
+
+
+/*============================*/
+/*footer- used in all pages*/
+/*============================*/
 .footer{
   width: 100%;
  }
+
+.bg-primary{
+  background-color:#3292a6!important;
+}
+
+
+/*============================*/
+/*sign up*/
+/*============================*/
+ @media only screen and (max-width: 960px) {
+ .divider-wrapper {
+     display: none; }
+}
+
+/*============================*/
