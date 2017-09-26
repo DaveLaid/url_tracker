@@ -32,7 +32,8 @@ $(document).ready(function() {
       password: password
     }).then(function(data) {
       console.log("-----POST - Replaced (data)----");
-      window.location.replace(data);
+      // window.location.href = data.redirect;
+      window.location.replace('/', data);
       // If there's an error, log the error
     }).catch(function(err) {
       console.log("Login error: " + err);
