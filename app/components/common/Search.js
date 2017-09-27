@@ -4,7 +4,7 @@ import API from "../../utils/API";
 class Search extends Component {
 
 	render() {
-	    
+
 	    return (
 
 	    	<div className="row">
@@ -18,12 +18,12 @@ class Search extends Component {
 										<button className="btn searchButton" type="button"><i className="fa fa-search fa-lg" aria-hidden="true"></i></button>
 									</span>
 									<input id="searchBar" type="text" className="form-control" placeholder="Search for..." autoComplete="on" />
-					            </div>
-				          </div>
+					       </div>
+				        </div>
 				      </div>
 				    </div>
-				</section>
-	        </div>
+			  </section>
+	    </div>
 	    );
 
 	}
