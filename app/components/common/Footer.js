@@ -11,7 +11,7 @@ class Footer extends Component {
 		    	<div className="container">
 		      		<div className="row text-center">
 		        		<div className="col-md-6 ml-auto">
-		          			<p className="lead">FOOTER IS COMING IN</p>
+		          			<p className="lead"></p>
 		        		</div>
 					</div>
 				</div>
@@ -20,7 +20,7 @@ class Footer extends Component {
 
 	}
 
-	
+
 }
 
-export default Footer;	
+export default Footer;
