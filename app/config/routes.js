@@ -20,6 +20,7 @@ const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
     	<Route path="home" component={Home} />
+      <Route path="signup" component={Signinup} />
     	<IndexRoute component={Signinup} />
     </Route>
   </Router>

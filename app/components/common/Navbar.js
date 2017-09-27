@@ -15,9 +15,9 @@ class Navbar extends Component {
 		this.toggleModal = this.toggleModal.bind(this);
 	}
 
-	toggleModal() { 
+	toggleModal() {
 		console.log("here in toggleModal", this.state.isOpen);
-	    
+
 	    this.setState({
 	      isOpen: !this.state.isOpen
 	    });
@@ -108,12 +108,12 @@ class Navbar extends Component {
 
 	    		<Add
 					show={this.state.isOpen}
-			        onClose={this.toggleModal} 
+			        onClose={this.toggleModal}
 			    />
 
 				{this.navButtons()}
 
-				
+
 
 			</div>
 		);

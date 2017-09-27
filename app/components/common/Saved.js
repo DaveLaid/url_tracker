@@ -6,7 +6,7 @@ class Saved extends Component {
 	render() {
 
 		var thStyle = { verticalAlign: "middle" };
-	    
+
 	    return (
 
 	    	<div className="row">
@@ -53,7 +53,7 @@ class Saved extends Component {
 				</section>
 
 	        </div>
-	    
+
 	    );
 
 	}

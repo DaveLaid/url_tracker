@@ -28,7 +28,7 @@ class Search extends Component {
   	}
 
 	render() {
-	    
+
 	    return (
 
 	    	<div className="row">
@@ -41,6 +41,8 @@ class Search extends Component {
 									<span className="input-group-btn">
 										<button onSubmit={this.onSearchSubmit} className="btn searchButton" type="submit"><i className="fa fa-search fa-lg" aria-hidden="true"></i></button>
 									</span>
+
+
 									<input 
 										id="searchBar" 
 										type="text" 
@@ -54,9 +56,10 @@ class Search extends Component {
 					            </form>
 				          	</div>
 				      	</div>
+
 				    </div>
-				</section>
-	        </div>
+			  </section>
+	    </div>
 	    );
 
 	}
