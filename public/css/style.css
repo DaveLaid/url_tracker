@@ -28,6 +28,8 @@ body {
     color:white !important;
     font-size:14px;
      }
+
+
 /*============================*/
 /*used only in main page*/
 /*============================*/
@@ -53,15 +55,17 @@ body {
 /*----search-----*/
 #searchBarContainer{
 background-color:#393a3e;
+width:100% !important;
 height:60px;
 padding:0;
 margin:0;
+
 }
 
 #searchBar{
 height:20px;
 margin:0px;
-/*padding-top:1%;*/
+padding-top:1%;
 padding-bottom:1%;
 background-color:#393a3e;
 color:#838386;
@@ -120,6 +124,7 @@ thead{
 tbody{
 color: #393a3e;
 }
+
 
 .tableHead{
   height:60px !important;
@@ -220,20 +225,26 @@ li{
 
 
 /*------main section------*/
+/*------------------------*/
+
 .mainSection{
 padding:0 !important;
+
+
 }
 
-/* 1/3 - introduction - leftside */
+/* 1/3 --- introduction - leftside */
 .introSection{
+
 }
 
-/*2/3 - divider betwwen introduction and sign Up form */
+/*2/3 --- divider betwwen introduction and sign Up form */
 .divider-wrapper{
 flex: 1 1;
 align-self: stretch;
 display: flex;
 justify-content: center;
+width:2%;
 }
 .divider{
   width: 1px;
@@ -241,8 +252,9 @@ justify-content: center;
   margin:10px 0;
 }
 
-/*3/3 - sign up form- right side*/
+/*3/3 --- sign up form- right side*/
 .signUpSection{
+
 }
 
 /*submitbutton*/
@@ -273,6 +285,19 @@ border-color:#3292a6!important;
  @media only screen and (max-width: 960px) {
  .divider-wrapper {
      display: none; }
+.signUpSection{
+    margin-top: 30px;
+    margin-bottom:30px;
+     }
+footer{
+  height: 5px!important;
+
+}
+#searchBar{
+height:20px;
+}
+
+
 }
 
 /*============================*/
