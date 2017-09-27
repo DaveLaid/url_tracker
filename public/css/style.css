@@ -53,6 +53,10 @@ body {
 }
 
 /*----search-----*/
+.rowSearch {
+background-color:#393a3e;
+display:block; 
+}
 #searchBarContainer{
 background-color:#393a3e;
 width:100% !important;
@@ -72,6 +76,11 @@ color:#838386;
 font-size: 22px;
 font-weight:bold;
 border:0px;
+}
+
+/*----saved-----*/
+.rowSaved {
+display: block;
 }
 
 /*Changing the color and style of the placeholder text*/

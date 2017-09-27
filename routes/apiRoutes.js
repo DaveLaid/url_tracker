@@ -13,4 +13,17 @@ var router = new express.Router();
 // Delete a specific quote using the id in req.params.id
 //router.delete("/quotes/:id", quotesController.destroy);
 
+router.post("/api/add", function(req, res) {
+  console.log("test add!!!")
+ 
+});
+
+router.get("/api/search", function(req, res) {
+  console.log("test search!!!")
+ 
+});
+
+
+
 module.exports = router;
+
