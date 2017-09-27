@@ -44,9 +44,7 @@ class Home extends Component {
 
 
         <div className="row">
-          <Add
-
-          />
+          {/*<Add />*/}
         </div>
 
 
