@@ -35,26 +35,22 @@ class Home extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <Search
 
-          />
+      <div>
+      
+        <div className="row rowSearch">
+          <Search/>
         </div>
 
+        <div className="container">
 
-        <div className="row">
-          {/*<Add />*/}
+          <div className="row rowSaved">
+            <Saved/>
+          </div>
+
         </div>
 
-
-        <div className="row">
-          <Saved
-          
-          />
-        </div>
-
-      </div>
+      </div>  
     );
   }
 }

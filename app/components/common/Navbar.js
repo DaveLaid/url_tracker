@@ -8,7 +8,7 @@ class Navbar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			signedin: false,
+			signedin: true,
 			isOpen: false
 		};
 		this.navButtons = this.navButtons.bind(this);
