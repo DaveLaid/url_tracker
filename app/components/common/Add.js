@@ -50,7 +50,7 @@ class Add extends Component {
     onAddSubmit(event) {
       event.preventDefault();
       console.log("in add - onAddSubmit ", this.state.title );
-      API.addUrl(this.state.title, this.state.category, this.state.url, this.state.image, this.state.note);
+      //API.addUrl(this.state.title, this.state.category, this.state.url, this.state.image, this.state.note);
       //this.setState({ search: event.target.value });
     }
 
@@ -67,11 +67,32 @@ class Add extends Component {
 	    	return null;
 	    }
 	    
+      // The gray background
+    const backdropStyle = {
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: 'rgba(0,0,0,0.3)',
+      padding: 50,
+      zIndex: 10000
+    };
+
+    // The modal "window"
+    const modalStyle = {
+      borderRadius: 5,
+      maxWidth: '100%',
+      minHeight: 300,
+      margin: '75px auto',
+      padding: 30
+    };
+
 	    return (
 
-	    	<div>
+	    	<div style={backdropStyle}>
 
-          <section className="py-5">
+          <section className="py-5" style={modalStyle}>
             <div className="container">
               <div className="row">
                 <div className="col">
@@ -155,7 +176,7 @@ class Add extends Component {
                                       />
                                     </td>
                                     <td>
-                                        <button onSubmit={this.onAddSubmit} className="btn searchButton" type="submit"><i className="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
+                                        <button onSubmit={this.onAddSubmit} className="btn searchButton" type="submit"><i className="fa fa-floppy-o fa-lg" aria-hidden="true"></i></button>
                                     </td>
                                   </tr>  
                                   

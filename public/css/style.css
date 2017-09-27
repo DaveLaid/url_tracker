@@ -63,7 +63,6 @@ width:100% !important;
 height:60px;
 padding:0;
 margin:0;
-
 }
 
 #searchBar{
@@ -104,6 +103,18 @@ margin-top: -10px !important;
 color:#838386;
 /*font-size: 22px;
 padding-bottom: 5px;*/
+}
+
+/*-----add-----*/
+.input-group .form-control {
+  width: 100%;
+  /*position: absolute;*/
+}
+.fa-floppy-o {
+  color:#fff;
+}
+td .searchButton{
+margin-top: .75rem;
 }
 
 /*-----modal-----*/
