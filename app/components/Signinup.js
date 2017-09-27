@@ -223,8 +223,14 @@ window.onload = function() {
 
 
 
-									<div className="text-center">
-										{/* <img src="..." className="rounded" alt="..."> */}
+									<div className="text-right groupImg">
+										<p>Developers:&nbsp;&nbsp;&nbsp;
+										 <a href="https://www.linkedin.com/in/mahshid-m-010680139/"><img  src="https://avatars2.githubusercontent.com/u/29652821?v=4&s=460" className="rounded-circle" alt="Mahshid"/></a>
+										 <a href="https://www.linkedin.com/in/anita-brument-84a8388/">
+										  <img  src="https://avatars3.githubusercontent.com/u/11968956?v=4&s=460" className="rounded-circle" alt="Anita"/></a>
+											<a href="https://www.linkedin.com/in/davidlaidlaw/">
+											 <img  src="https://avatars3.githubusercontent.com/u/29416480?v=4&s=460" className="rounded-circle" alt="David"/></a></p>
+
 									</div>
 
 
