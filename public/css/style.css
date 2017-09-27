@@ -54,7 +54,7 @@ body {
 /*----search-----*/
 .rowSearch {
 background-color:#393a3e;
-display:block; 
+display:block;
 }
 #searchBarContainer{
 background-color:#393a3e;
@@ -338,8 +338,16 @@ padding:0 !important;
   color:#fff;
   padding-bottom: 50px;
 }
-
-
+.groupImg img{
+  border
+  width: 55px;
+  height: 55px;
+}
+ .groupImg p{
+   font-size: 18px;
+   font-family: 'Roboto', "sans-serif";
+   font-weight: bold;
+ }
 
 
 /* annimation */
