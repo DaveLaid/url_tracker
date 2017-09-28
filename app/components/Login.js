@@ -18,7 +18,7 @@ class Login extends Component {
     		<div>
 
     			{/*<!-- Grey section -->*/}
-				<section className="py-3 mb-4 bg-light">
+				<section className="py-4 mb-4 greySection">
 				<div className="container">
 				  <div className="row"></div>
 				</div>
@@ -69,7 +69,7 @@ class Login extends Component {
     		</div>
     	);
 
-    }	
+    }
 
 
 
