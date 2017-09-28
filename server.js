@@ -5,12 +5,13 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongojs = require("mongojs");
 var mongoose = require("mongoose");
+var cookieParser = require('cookie-parser');
+var session = require("express-session");
+
 mongoose.Promise = bluebird;
 
-
-var session = require("express-session");
 // Requiring passport as we've configured it
-var passport = require("./config/passport");
+// var passport = require("./config/passport");
 
 var routes = require("./routes/routes");
 var User = require("./models/User.js");
@@ -19,20 +20,34 @@ var Site = require("./models/Site.js");
 // Set up a default port, configure mongoose, configure our middleware
 var PORT = process.env.PORT || 3000;
 
-
 var app = express();
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
+
+// Make public a static dir
+
+// app.use(express.static("./public"));
+
+app.use(express.static("./public/bundle.js"));
+app.use('/css', express.static('./public/css'))
+app.use('/fonts', express.static('./public/fonts'))
+app.use('/img', express.static('./public/img'))
+app.use('/js', express.static('./public/js'))
+
+
+app.use(cookieParser());
+// app.use(session({
+// 	secret:'anyStringOfText',
+//     saveUnInitialized: true,
+//     resave: true }
+//    ));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// Make public a static dir
-app.use(express.static("./public"));
-
 
 // ... continue with Express.js app initialization ...
 app.use(require('connect-flash')()); // see the next section
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 var db = process.env.MONGODB_URI || "mongodb://localhost/urlTracker";
 

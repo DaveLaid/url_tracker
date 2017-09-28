@@ -16,7 +16,7 @@ $(document).ready(function() {
     if (!userData.email || !userData.password) {
       $("#alert .msg").text("All fields cannot be left empty. Please try again.");
       $("#alert").fadeIn(500);
-      return; 
+      return;
     }
     console.log("AFTER loginForm");
     // If we have an email and password we run the loginUser function and clear the form
@@ -27,13 +27,13 @@ $(document).ready(function() {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us to the Main page to Search/Add
   function loginUser(email, password) {
-    $.post("/api/login", {
+    $.post("/login", {
       email: email,
       password: password
     }).then(function(data) {
       console.log("-----POST - Replaced (data)----");
       // window.location.href = data.redirect;
-      window.location.replace('/', data);
+      window.location = "/";
       // If there's an error, log the error
     }).catch(function(err) {
       console.log("Login error: " + err);
@@ -44,3 +44,10 @@ $(document).ready(function() {
 
 });
 
+
+// var passwordHash = require('./lib/password-hash');
+
+// var hashedPassword = 'sha1$3I7HRwy7$cbfdac6008f9cab4083784cbd1874f76618d2a97';
+    
+// console.log(passwordHash.verify('password123', hashedPassword)); // true
+// console.log(passwordHash.verify('Password0', hashedPassword)); // false
