@@ -21,8 +21,8 @@ const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
     	<Route path="home" component={Home} />
-      <Route path="login" component={Login} />
-      <Route path="signup" component={Signup} />
+      {/*<Route path="login" component={Login} />*/}
+      {/*<Route path="signup" component={Signup} />*/}
     	<IndexRoute component={Home}/>
     </Route>
   </Router>
