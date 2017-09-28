@@ -12,16 +12,16 @@ class Home extends Component {
     };
     // Binding getUrls to our component since we'll be passing this
     // method to child components
-    this.getUrls = this.getUrls.bind(this);
+    //this.getUrls = this.getUrls.bind(this);
   }
   // Getting all Urls when the component mounts
   componentDidMount() {
-    this.getUrls();
+    //this.getUrls();
   }
   getUrls() {
-    API.getUrls().then((res) => {
-      this.setState({ Urls: res.data });
-    });
+    // API.getUrls().then((res) => {
+    //   this.setState({ Urls: res.data });
+    // });
   }
   // A helper method for rendering one panel for each url
   renderUrls() {
