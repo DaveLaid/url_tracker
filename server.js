@@ -29,7 +29,8 @@ app.use(logger("dev"));
 
 
 app.use(express.static("./public"));
-app.use('/bundle.js',express.static('./public/bundle.js'));
+app.use('/bundle.js', express.static("./public/bundle.js"));
+
 // app.use(express.static("./public/index.html"));
 // app.use(express.static("./public/layoutForm.html"));
 // app.use(express.static("./public/login.html"));

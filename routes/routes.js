@@ -95,7 +95,7 @@ app.post('/signup', function(req, res) {
 
   newUser.password = newUser.generateHash(newUser.password);
   newUser.save();
-  res.sendFile(path.join(__dirname, "../public/layoutForm.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
   res.cookie("loggedin", newUser._id);
   console.log("SUCCESS!  SIGNED UP - AND ASSIGNED COOKIE!")
 });
