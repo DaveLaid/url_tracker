@@ -11,8 +11,9 @@ const API = {
 		return axios.get("/api/urls");
 	},
 	// Adds a new url to the db
-	addUrl: function(title, category, url, image, note) {
-		return axios.post("/api/add", { title, category, url, image, note });
+	addUrl: function(title, category, url, screenshot, note) {
+		console.log("add url: ");
+		return axios.post("/api/add", { title, category, url, screenshot, note });
 	},
 	// Deletes a url from the db
 	deleteUrl: function(id) {

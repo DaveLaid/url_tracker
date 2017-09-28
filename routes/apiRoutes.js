@@ -27,9 +27,9 @@ router.patch("/url/:id", urlController.update);
 router.delete("/url/:id", urlController.destroy);
 
 
-// router.post("/api/add", function(req, res) {
-//   console.log("test add!!!")
-// });
+router.post("/api/add", function(req, res) {
+   console.log("test add!!!")
+});
 
 // router.get("/api/search", function(req, res) {
 //   console.log("test search!!!")

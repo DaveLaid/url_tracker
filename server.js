@@ -29,7 +29,7 @@ app.use(logger("dev"));
 
 //app.use(express.static("./public"));
 
-app.use('/bundle.js',express.static("./public/bundle.js"));
+app.use('/bundle.js', express.static("./public/bundle.js"));
 app.use('/css', express.static('./public/css'))
 app.use('/fonts', express.static('./public/fonts'))
 app.use('/img', express.static('./public/img'))
