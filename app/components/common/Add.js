@@ -62,11 +62,11 @@ class Add extends Component {
 
 		// Render nothing if the "show" prop is false
 		//if(!this.props.show) {
-		if(!this.props.show) {	
+		if(!this.props.show) {
 			console.log("in Add - render: ", this.props.show);
 	    	return null;
 	    }
-	    
+
       // The gray background
     const backdropStyle = {
       position: 'fixed',
@@ -112,87 +112,89 @@ class Add extends Component {
                             </thead>
 
                             <tbody>
-                                
-                                 
+
+
                                   <tr>
                                     <td scope="row">
-                                      <input 
-                                        id="addTitle" 
-                                        type="text" 
+                                      <input
+                                        id="addTitle"
+                                        type="text"
                                         value={this.state.title}
                                         onChange={this.handleTitleChange}
                                         required
-                                        className="form-control" 
-                                        placeholder="title" 
-                                        autoComplete="on" 
+                                        className="form-control"
+
+                                        autoComplete="on"
                                       />
                                     </td>
                                     <td>
-                                      <input 
-                                        id="addCategory" 
-                                        type="text" 
+                                      <input
+                                        id="addCategory"
+                                        type="text"
                                         value={this.state.category}
                                         onChange={this.handleCategoryChange}
                                         required
-                                        className="form-control" 
-                                        placeholder="category" 
-                                        autoComplete="on" 
+                                        className="form-control"
+
+                                        autoComplete="on"
                                       />
                                     </td>
                                     <td>
-                                      <input 
-                                        id="addUrl" 
-                                        type="text" 
+                                      <input
+                                        id="addUrl"
+                                        type="text"
                                         value={this.state.url}
                                         onChange={this.handleUrlChange}
                                         required
-                                        className="form-control" 
-                                        placeholder="url" 
-                                        autoComplete="on" 
+                                        className="form-control"
+
+                                        autoComplete="on"
                                       />
                                     </td>
                                     <td>
+
                                       <input 
                                         id="addImage" 
                                         type="text" 
                                         value={this.state.screenshot}
                                         onChange={this.handleScreenshotChange}
+
                                         required
-                                        className="form-control" 
-                                        placeholder="image" 
-                                        autoComplete="on" 
+                                        className="form-control"
+
+                                        autoComplete="on"
                                       />
                                     </td>
                                     <td>
-                                      <input 
-                                        id="addNote" 
-                                        type="text" 
+                                      <input
+                                        id="addNote"
+                                        type="text"
                                         value={this.state.note}
                                         onChange={this.handleNoteChange}
                                         required
-                                        className="form-control" 
-                                        placeholder="note" 
-                                        autoComplete="on" 
+                                        className="form-control"
+                                      
+                                        autoComplete="on"
                                       />
                                     </td>
                                     <td>
                                         <button onSubmit={this.onAddSubmit} className="btn searchButton" type="submit"><i className="fa fa-floppy-o fa-lg" aria-hidden="true"></i></button>
                                     </td>
-                                  </tr>  
-                                  
-                                
-                              
+                                  </tr>
+
+
+
                             </tbody>
-                            
+
                           </table>
-                        </form>    
+                        </form>
                       </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        		
+
       	</div>
 
 	    );

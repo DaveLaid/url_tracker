@@ -29,7 +29,7 @@ class Saved extends Component {
 				<section className="py-5">
 				    <div className="container">
 				    	<div className="row">
-				    		<div className="col">
+				    		<div className="col-lg-12">
 				    			<div className="card">
 
 				        			<table className="table">
