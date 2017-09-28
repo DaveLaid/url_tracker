@@ -28,13 +28,16 @@ app.use(logger("dev"));
 // Make public a static dir
 
 // app.use(express.static("./public"));
-
-app.use(express.static("./public/bundle.js"));
+app.use('/bundle.js',express.static("./public/bundle.js"));
+// app.use(express.static("./public/index.html"));
+// app.use(express.static("./public/layoutForm.html"));
+// app.use(express.static("./public/login.html"));
+// app.use(express.static("./public/signup.html"));
 app.use('/css', express.static('./public/css'))
 app.use('/fonts', express.static('./public/fonts'))
 app.use('/img', express.static('./public/img'))
 app.use('/js', express.static('./public/js'))
-
+// app.use(express.static("./public/bundle.js"));
 
 app.use(cookieParser());
 // app.use(session({
@@ -49,19 +52,46 @@ app.use(bodyParser.json());
 app.use(require('connect-flash')()); // see the next section
 // app.use(passport.initialize());
 
-var db = process.env.MONGODB_URI || "mongodb://localhost/urlTracker";
 
-// Connect mongoose to our database
-mongoose.connect(db, function(error) {
-  // Log any errors connecting with mongoose
-  if (error) {
-    console.error(error);
-  }
-  // Or log a success message
-  else {
-    console.log("Mongoose connection is successful");
-  }
+// Database configuration with mongoose
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect('mongodb://localhost/urlTracker');
+}
+// mongoose.connect("mongodb://localhost/urlTracker");
+// mongoose.connect("mongodb://heroku_d0qbft9r:plvmklodqf294l7k36knunj5g3@ds155424.mlab.com:55424/heroku_d0qbft9r");
+var db = mongoose.connection;
+
+// Show any mongoose errors
+db.on("error", function(error) {
+  console.log("Mongoose Error: ", error);
 });
+
+// Once logged in to the db through mongoose, log a success message
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
+
+
+
+
+// var db = process.env.MONGODB_URI || "mongodb://localhost/urlTracker";
+
+// // Connect mongoose to our database
+// mongoose.connect(db, function(error) {
+//   // Log any errors connecting with mongoose
+//   if (error) {
+//     console.error(error);
+//   }
+//   // Or log a success message
+//   else {
+//     console.log("Mongoose connection is successful");
+//   }
+// });
+
+
 
 routes(app);
 
@@ -86,8 +116,12 @@ routes(app);
 // });
 
 
-
 // Start the server
-app.listen(PORT, function() {
-  console.log("Now listening on port %s! Visit localhost:%s in your browser.", PORT, PORT);
+app.listen(process.env.PORT || 3000, function() {
+  console.log("App running on port 3000!");
 });
+
+// // Start the server
+// app.listen(PORT, function() {
+//   console.log("Now listening on port %s! Visit localhost:%s in your browser.", PORT, PORT);
+// });

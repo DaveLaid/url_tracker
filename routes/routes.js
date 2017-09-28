@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
 
-// var passport = require("../config/passport");
+
 var User = require("../models/User.js");
 var Site = require("../models/Site.js");
 
@@ -22,11 +22,6 @@ var router = new express.Router();
 
 
 
-
-
-
-
-
 // Routes =============================================================
 module.exports = function(app) {
 
@@ -40,7 +35,7 @@ User.findOne({_id: req.cookies.loggedin}, function(err, user) {
     res.sendFile(path.join(__dirname, "../public/layoutForm.html"));
   }
   else {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   }
 })
 
@@ -66,6 +61,7 @@ app.get("/logout", function(req, res) {
 });
 
 
+
 app.post('/signup', function(req, res) {
   var newUser = new User({
     fullname: req.body.fullname,
@@ -76,7 +72,7 @@ app.post('/signup', function(req, res) {
   newUser.password = newUser.generateHash(newUser.password);
   newUser.save();
   res.sendFile(path.join(__dirname, "../public/layoutForm.html"));
-  res.cookie("loggedin", user._id);
+  res.cookie("loggedin", newUser._id);
   console.log("SUCCESS!  SIGNED UP - AND ASSIGNED COOKIE!")
 });
 
