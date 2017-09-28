@@ -33,11 +33,13 @@ app.get("/", function(req, res) {
  console.log('Cookies: ', req.cookies);
  User.findOne({_id: req.cookies.loggedin}, function(err, user) {
 
-  if (user || 1 ){
+  if (user){
     res.sendFile(path.join(__dirname, "../public/index.html"));
+    return user;
   }
   else {
     res.sendFile(path.join(__dirname, "../public/signup.html"));
+    return false;
   }
 })
 
@@ -49,10 +51,22 @@ app.get("/signup", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/signup.html"));
 });
 
+
 // Login page
 app.get("/login", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/login.html"));
+  User.findOne({_id: req.cookies.loggedin}, function(err, user) {
+
+  if (user){
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+    return user;
+  }
+  else {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+    return false;
+  }
+})
 });
+
 
   // Route for logging user out
 app.get("/logout", function(req, res) {
@@ -77,6 +91,7 @@ app.post('/signup', function(req, res) {
   res.cookie("loggedin", newUser._id);
   console.log("SUCCESS!  SIGNED UP - AND ASSIGNED COOKIE!")
 });
+
 
 
 app.post('/login', function(req, res) {
