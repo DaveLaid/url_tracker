@@ -13,6 +13,7 @@ class Login extends Component {
 
 	render() {
 
+		var display = { display: "none" };
     	return (
     		<div>
 
@@ -45,7 +46,7 @@ class Login extends Component {
 
 
 				            </div>
-				            <div style="display: none" id="alert" className="alert alert-danger" role="alert">
+				            <div style={display} id="alert" className="alert alert-danger" role="alert">
 				              <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				              <span className="sr-only">Error:</span> <span className="msg"></span>
 				            </div>
@@ -59,9 +60,9 @@ class Login extends Component {
 				</section>
 				<hr/>
 				<ul className ="account">
-				 <li id ="user"> Don't have an account?</li>
+				 <li id="user"> Don't have an account?</li>
 
-				 <a href="#" id ="creatAcc"><li>Create account</li></a>
+				 <a href="#" id="creatAcc"><li>Create account</li></a>
 				 <li id="copyRight">Copyright 2017 Bookmark Buddy. All rights reserved.</li>
 				</ul>
 
