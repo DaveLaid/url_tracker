@@ -27,10 +27,10 @@ var urlController = require("../controllers/urlController");
 // Routes =============================================================
 module.exports = function(app) {
 
-app.post("/api/add", function(req, res) {
-   console.log("test add!!!", req.body);
-   urlController.create(req, res);
-});
+// app.post("/api/add", function(req, res) {
+//    console.log("test add!!!", req.body);
+//    urlController.create(req, res);
+// });
 
 
 // Bookmark Buddy home page
@@ -41,7 +41,7 @@ app.get("/", function(req, res) {
  console.log('Cookies: ', req.cookies);
  User.findOne({_id: req.cookies.loggedin}, function(err, user) {
 
-  if (user || 1 ){
+  if (user){
     res.sendFile(path.join(__dirname, "../public/index.html"));
   }
   else {
@@ -111,7 +111,7 @@ app.post('/login', function(req, res) {
 
 
 // Handle form submission to add new site, save submission to mongo
-app.post("/addsite", function(req, res) {
+app.post("/api/add", function(req, res) {
   console.log(req.body);
   var newSite = new Site(req.body);
 

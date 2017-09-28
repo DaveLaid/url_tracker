@@ -24,6 +24,9 @@ const API = {
 		url.favorited = !url.favorited;
 		const { _id, favorited } = url;
 		return axios.patch(`/api/urls/${_id}`, { favorited });
+	},
+	loadPage: function(cookie) {
+		return axios.get("/account/" + cookie);
 	}
 };
 

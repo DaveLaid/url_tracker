@@ -8,7 +8,8 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      urls: []
+      urls: [],
+      cookies: ""
     };
     // Binding getUrls to our component since we'll be passing this
     // method to child components
@@ -16,6 +17,12 @@ class Home extends Component {
   }
   // Getting all Urls when the component mounts
   componentDidMount() {
+    this.setState({cookies: document.cookie.slice(9)})
+
+    API.loadPage(this.state.cookies).then((user) => {
+      this.setState({urls: user.urls})
+    }
+    //this.setState({cookies: })
     //this.getUrls();
   }
   getUrls() {
@@ -35,6 +42,7 @@ class Home extends Component {
   }
   render() {
 
+
     var thStyle = { verticalAlign: "middle" };
 
     return (
@@ -42,7 +50,7 @@ class Home extends Component {
       <div>
       
         <div className="row rowSearch">
-          <Search/>
+          <Search urls={this.urls}/>
         </div>
 
         <div className="container">

@@ -8,7 +8,7 @@ class Navbar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			signedin: true,
+			page: "",
 			isOpen: false
 		};
 		this.navButtons = this.navButtons.bind(this);
@@ -23,11 +23,18 @@ class Navbar extends Component {
 	    });
 	}
 
+	componentDidMount() {
+
+		// API.loadPage(this.state.page).then((res) => {
+  //     	this.setState({ page: res.data });
+  //   	});
+	}
+
 	/* put component did update or something in here to set signein to true or false*/
 
 	navButtons(){
 
-		if (this.state.signedin)
+		if (this.props.loggedin === "loggedin")
 		{
 			return (
 
@@ -66,7 +73,7 @@ class Navbar extends Component {
 
 		}
 
-		else {
+		else if (this.state.page === "login") {
 
 
 			return (
@@ -84,9 +91,49 @@ class Navbar extends Component {
 				        <ul className="navbar-nav ml-auto">
 
 				        {/*<!-- sign up -->*/}
-				          <button className="btn btn-primary btn-sm navBtnSignup"><li className="nav-item">
-				            <a href="#" className="nav-link navBtnText"><i className="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Sign in</a>
-				          </li></button>
+				          <button className="btn btn-primary btn-sm navBtnSignup">
+				          <Link to="/login">
+				          	<li className="nav-item">
+				            <a className="nav-link navBtnText"><i className="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log in</a>
+				          	</li>
+				          	</Link>
+				          </button>
+
+				        </ul>
+				      </div>
+				    </div>
+				</nav>
+
+			</div>
+			);
+
+		}
+
+		else if (this.props.loggedin === null) {
+
+
+			return (
+
+				<div>
+				{/*<!-- Nav Bar -->*/}
+				<nav className="navbar navbar-expand-md navbar-light fixed-top py-3">
+				    <div className="container">
+				      <a href="index.html" className="navbar-brand">
+				        <img src="img/logo.svg" width="60" height="60" alt="" /><h3 className="d-inline align-middle logoText"> Bookmark Buddy</h3>
+				      </a>
+				      {/*<!-- hamburger menu -->*/}
+				      <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span className="navbar-toggler-icon"></span></button>
+				      <div className="collapse navbar-collapse" id="navbarNav">
+				        <ul className="navbar-nav ml-auto">
+
+				        {/*<!-- sign up -->*/}
+				          <button className="btn btn-primary btn-sm navBtnSignup">
+				          <Link to="/login">
+				          	<li className="nav-item">
+				            <a className="nav-link navBtnText"><i className="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log in</a>
+				          	</li>
+				          	</Link>
+				          </button>
 
 				        </ul>
 				      </div>
