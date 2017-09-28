@@ -14,7 +14,7 @@ class Home extends Component {
     };
     // Binding getUrls to our component since we'll be passing this
     // method to child components
-    //this.getUrls = this.getUrls.bind(this);
+    this.getUrls = this.getUrls.bind(this);
   }
   // Getting all Urls when the component mounts
   componentDidMount() {

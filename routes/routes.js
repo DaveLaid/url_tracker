@@ -180,6 +180,7 @@ app.get("/usersites", function(req, res) {
           userUrls.push(allSites[i].url);
         }
         res.send(userUrls);
+        res.send(allSites);
       }
     });
 });

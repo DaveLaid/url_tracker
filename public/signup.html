@@ -8,8 +8,9 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style0.css">
   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 
 
@@ -36,34 +37,71 @@
     </div>
   </nav>
 
-<!-- Grey section -->
-  <section class="py-3 mb-4 bg-light">
-    <div class="container">
-      <div class="row"></div>
-    </div>
-  </section>
+
 
 
 <!-- Main Section -->
-  <div class="container adjustpage">
-    <div class="row signupR">
+  <div class="container py-5 bodyLandingPag">
+    <div class="row">
 
       <!-- 1 of 3 -introduction  -->
 
-      <div class="col-md-5 introSection">
-          <h4> Search bookmarks pages visited<br/>take notes of the link location and categorize them.</h4>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 introSection">
+        <header id="home-section">
+        <div class="dark-overlay">
+          <div class="home-inner">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 d-lg-block">
+                  <h1 class="display-4">
+                    Bookmark
+                      <br/>
+                      Buddy
+
+                </h1>
+                <div class="d-flex flex-row">
+                    <div class="content">
+                        <div class="content__container">
+                          <p class="content__container__text">
+                            www.
+                          </p>
+
+                          <ul class="content__container__list">
+                            <li class="content__container__list__item">google.com</li>
+                            <li class="content__container__list__item">amazon.com</li>
+                            <li class="content__container__list__item">twitter.org</li>
+                            <li class="content__container__list__item">github.com</li>
+                          </ul>
+                        </div>
+                      </div>
+
+
+                      <div>
+                      <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+                      <h1 id="lastSite">The Last Site<br/>
+                        <span
+                           class="txt-rotate"
+                           data-period="2000"
+                           data-rotate='[ "you.", "need.", "to.", "remember"]'></span>
+                      </h1>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </header>
 
       </div>
       <!-- 2 of 3 divider -->
-
-        <div class="col-1 divider-wrapper">
+      <div class="col-1 divider-wrapper">
 
               <div class="divider"></div>
 
       </div>
-        <!-- 3 of 3 sign up-->
-
-        <div class="col-md-6 signUpSection">
+        <!-- 2 of 2 sign up-->
+      <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 signUpSection">
           <section id="signUp">
             <div class="container">
               <div class="row">
@@ -73,20 +111,20 @@
                       <h4>Sign Up</h4>
                     </div>
                     <div class="card-body">
-                      <form class="signup" action="/signup" method="post">
+                      <form action="#">
                         <div class="form-group">
                           <label for="fullName">Full Name</label>
-                          <input id="name-input" type="text" class="form-control">
+                          <input type="text" class="form-control" />
                         </div>
                         <div class="form-group">
                           <label for="email">Email</label>
-                          <input id="email-input" type="email" class="form-control">
+                          <input type="text" class="form-control" />
                         </div>
                         <div class="form-group">
                           <label for="password">Password</label>
-                          <input id="password-input" type="password" class="form-control">
+                          <input type="password" class="form-control" />
                         </div>
-                        <input type="submit" class="btn btn-primary btn-block " value="Sign up">
+                        <input type="submit" class="btn btn-primary btn-block" value="Sign up" />
                       </form>
                     </div>
                   </div>
@@ -97,6 +135,64 @@
       </div>
       </div>
     </div>
+
+      <!-- * second row * -->
+
+      <section id="explore-head-section">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <div>
+                <h1 class="whatNew">How <br/>It <br/>Works</h1>
+                <div>
+                     <p >Bookmark Buddy is a lightweight URL organizer, use it to save websites, and keep all your bookmarks organized with built-in search, organized by category, and even leave your self-notes. Bookmark Buddy is the last thing you will have to remember.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--EXPLORE SECTION  -->
+      <section id="explore-section" class="bg-light text-muted py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <h3>Bookmark Buddy in use</h3>
+                 <div class="d-flex flex-row">
+                <div class="p-4 align-self-start">
+                  <i class="fa fa-check fa-lg"></i>
+                </div>
+                <div class="p-4 align-self-end">
+                  Bookmark Buddy is cross platform.
+                </div>
+               </div>
+              <div class="d-flex flex-row">
+                <div class="p-4 align-self-start">
+                  <i class="fa fa-check fa-lg"></i>
+                </div>
+                <div class="p-4 align-self-end">
+                Finally a way to organize your sites.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="text-right groupImg">
+            <p>Developers:&nbsp;&nbsp;&nbsp;
+             <a href="https://www.linkedin.com/in/mahshid-m-010680139/"><img  src="https://avatars2.githubusercontent.com/u/29652821?v=4&s=460" class="rounded-circle" alt="Mahshid"/></a>
+             <a href="https://www.linkedin.com/in/anita-brument-84a8388/">
+              <img  src="https://avatars3.githubusercontent.com/u/11968956?v=4&s=460" class="rounded-circle" alt="Anita"/></a>
+              <a href="https://www.linkedin.com/in/davidlaidlaw/">
+               <img  src="https://avatars3.githubusercontent.com/u/29416480?v=4&s=460" class="rounded-circle" alt="David"/></a></p>
+
+          </div>
+
+
+        </div>
+      </section>
 
 
 
