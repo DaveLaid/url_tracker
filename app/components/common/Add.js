@@ -13,14 +13,14 @@ class Add extends Component {
     		title: "",
     		category: "",
         url: "",
-    		image: "",
+    		screenshot: "",
     		note: ""
     	};
     	// We need to bind our "" method to our component with this syntax in the constructor since we'll be passing it to child components
     	this.handleTitleChange = this.handleTitleChange.bind(this);
       this.handleCategoryChange = this.handleCategoryChange.bind(this);
       this.handleUrlChange = this.handleUrlChange.bind(this);
-      this.handleImageChange = this.handleImageChange.bind(this);
+      this.handleScreenshotChange = this.handleScreenshotChange.bind(this);
       this.handleNoteChange = this.handleNoteChange.bind(this);
       this.onAddSubmit = this.onAddSubmit.bind(this);
   	}
@@ -38,9 +38,9 @@ class Add extends Component {
       this.setState({ url: event.target.value });
       console.log("in add - handleUrlChange ", event.target.value );
     }
-    handleImageChange(event) {
-      this.setState({ image: event.target.value });
-      console.log("in add - handleImageChange ", event.target.value );
+    handleScreenshotChange(event) {
+      this.setState({ screenshot: event.target.value });
+      console.log("in add - handleScreenshotChange ", event.target.value );
     }
     handleNoteChange(event) {
       this.setState({ note: event.target.value });
@@ -105,7 +105,7 @@ class Add extends Component {
                                 <th style={thStyle}>Title</th>
                                 <th style={thStyle}>Category</th>
                                 <th style={thStyle}>URL</th>
-                                <th style={thStyle}>Image</th>
+                                <th style={thStyle}>Screenshot</th>
                                 <th style={thStyle}>Note</th>
                                 <th style={thStyle}></th>
                               </tr>
@@ -155,8 +155,8 @@ class Add extends Component {
                                       <input 
                                         id="addImage" 
                                         type="text" 
-                                        value={this.state.image}
-                                        onChange={this.handleImageChange}
+                                        value={this.state.screenshot}
+                                        onChange={this.handleScreenshotChange}
                                         required
                                         className="form-control" 
                                         placeholder="image" 

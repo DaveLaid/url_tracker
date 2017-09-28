@@ -27,12 +27,14 @@ module.exports = function(app) {
 
 // Bookmark Buddy home page
 app.get("/", function(req, res) {
-  
- console.log('Cookies: ', req.cookies);
-User.findOne({_id: req.cookies.loggedin}, function(err, user) {
+  console.log('get ROOT');
+  // res.sendFile(path.join(__dirname, "../public/index.html"));
 
-  if (user){
-    res.sendFile(path.join(__dirname, "../public/layoutForm.html"));
+ console.log('Cookies: ', req.cookies);
+ User.findOne({_id: req.cookies.loggedin}, function(err, user) {
+
+  if (user || 1 ){
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   }
   else {
     res.sendFile(path.join(__dirname, "../public/signup.html"));
