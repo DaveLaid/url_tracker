@@ -9,11 +9,12 @@ class Home extends Component {
     super();
     this.state = {
       urls: [],
-      cookies: ""
+      cookies: "",
+      sites: []
     };
     // Binding getUrls to our component since we'll be passing this
     // method to child components
-    //this.getUrls = this.getUrls.bind(this);
+    this.getUrls = this.getUrls.bind(this);
   }
   // Getting all Urls when the component mounts
   componentDidMount() {
@@ -21,14 +22,15 @@ class Home extends Component {
 
     API.loadPage(this.state.cookies).then((user) => {
       this.setState({urls: user.urls})
-    }
+    });
     //this.setState({cookies: })
     //this.getUrls();
   }
   getUrls() {
-    // API.getUrls().then((res) => {
-    //   this.setState({ Urls: res.data });
-    // });
+    API.getUrls().then((res) => {
+      this.setState({ sites: res.data });
+      console.log(res.data);
+    });
   }
   // A helper method for rendering one panel for each url
   renderUrls() {
