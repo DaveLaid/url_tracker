@@ -32,13 +32,14 @@ $(document).ready(function() {
   // Does a post to the signup route. If successful, we are redirected to the Create Flashcards page
   // Otherwise we log any errors
   function signUpUser(fullname, email, password) {
-    $.post("/api/signup", {
+    $.post("/signup", {
       fullname: fullname,
       email: email,
       password: password
       
     }).then(function(data) {
-      window.location.replace('/', data);
+       window.location = "/";
+      // window.location.replace('/', data);
       // window.location.replace(data);
       // If there's an error, handle it by throwing up a boostrap alert
     }).catch(function(err) {
