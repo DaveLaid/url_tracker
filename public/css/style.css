@@ -114,6 +114,7 @@ padding-bottom: 5px;*/
 }
 td .searchButton{
 margin-top: .75rem;
+margin-bottom: 0px!important;
 }
 
 /*-----modal-----*/
@@ -182,6 +183,11 @@ color: #393a3e;
   border-radius:3px;
   background-color:#3292a6!important;
   }
+ .greySection{
+  background-color:#2e3438!important;
+
+ }
+
 
 /*login Form */
 #login{
@@ -537,38 +543,54 @@ border-color:#3292a6!important;
 
 
 /*============================*/
-/*sign up*/
+/*media/
 /*============================*/
- @media only screen and (max-width: 960px) {
- .divider-wrapper {
-     display: none;
+
+
+ @media only screen and (max-width: 1200px) {
+  .display-4{
+     font-size:5em;
    }
-.signUpSection{
-    margin-top: 30px;
-    margin-bottom:30px;
-     }
-footer{
-  height: 5px!important;
+
+
+ }
+ @media only screen and (max-width: 1024px) {
+.display-4{
+  font-size:5em;
 
 }
+
+.signUpSection{
+  margin-top: 30px;
+  margin-bottom:30px;
+ }
+
+#home-section .dark-overlay{
+  min-height:410px;
+ }
+
+#home-section{
+  min-height: 400px;
+}
+
+footer{
+ height: 5px!important;
+}
+
 #searchBar{
 height:20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+@media only screen and (max-width: 992px) {
+.display-4{
+ font-size:3em;
+}
+
+#home-section{
+  min-height: 400px;
+}
+}
+
 
 /*============================*/

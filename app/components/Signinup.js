@@ -89,13 +89,13 @@ window.onload = function() {
 				    <div className="row">
 
 				      {/*<!-- 1 of 2-introduction  -->*/}
-				      <div className="col-6 introSection">
+				      <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 introSection">
 								<header id="home-section">
 								<div className="dark-overlay">
 									<div className="home-inner">
 										<div className="container">
 											<div className="row">
-												<div className="col-lg-8 d-none d-lg-block">
+												<div className="col-lg-8 d-lg-block">
 													<h1 className="display-4">
 														Bookmark
 															<br/>
@@ -144,7 +144,7 @@ window.onload = function() {
 
 				      </div> */}
 				       {/* <!-- 2 of 2 sign up-->*/}
-				      <div className="col-6 signUpSection">
+				      <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 signUpSection">
 				          <section id="signUp">
 				            <div className="container">
 				              <div className="row">
