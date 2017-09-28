@@ -89,7 +89,7 @@ app.post('/login', function(req, res) {
       // console.log("Login error: " + err);
       // $("#alert .msg").text("Incorrect email and/or password. Please try again.");
       // $("#alert").fadeIn(500);
-      console.log("NOT A VALID USER.")
+      console.log("NOT A VALID USER.");
     } else {
       //create cookie called "loggedin"
       res.cookie("loggedin", user._id);
@@ -219,7 +219,6 @@ app.get("/user/:id", function(req, res) {
 
 
 
-
 // Update fields of a site saved
 app.get("/updatesite/:id", function(req, res) {
   // Update a doc in the "sites" collection with an ObjectId matching
@@ -246,7 +245,6 @@ app.get("/updatesite/:id", function(req, res) {
   });
 
 });
-
 
 
 // Delete One from the DB
