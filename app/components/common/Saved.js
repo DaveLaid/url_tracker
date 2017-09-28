@@ -9,13 +9,13 @@ class Saved extends Component {
 
 	    return (
 
-	    	<div className="row">
+	    	<div>
 
 	    		{/*<!-- saved results -->*/}
 				<section className="py-5">
 				    <div className="container">
 				    	<div className="row">
-				    		<div className="col">
+				    		<div className="col-lg-12">
 				    			<div className="card">
 
 				        			<table className="table">
