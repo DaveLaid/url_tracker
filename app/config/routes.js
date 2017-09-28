@@ -23,7 +23,7 @@ const routes = (
     	<Route path="home" component={Home} />
       <Route path="login" component={Login} />
       <Route path="signup" component={Signup} />
-    	<IndexRoute component={Signup}/>
+    	<IndexRoute component={Home}/>
     </Route>
   </Router>
 );
