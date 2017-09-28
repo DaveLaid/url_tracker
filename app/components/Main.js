@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./common/Navbar";
 import Footer from "./common/Footer";
+import Home from "./Home";
 
 
 class Main extends React.Component {
@@ -12,7 +13,7 @@ class Main extends React.Component {
       loggedin: null
     }
 
-      console.log(props.location.hash);
+      //console.log(props.location.hash);
   }
 
   componentDidMount() {
@@ -23,16 +24,16 @@ class Main extends React.Component {
   }
 
   render() {
-
-    console.log(document.cookie)
-    if (this.props.location.hash === "#/signup") {
-        var style = {  background: "#333"};
-    }
+//console.log("HERE ", this.props.children);
+    //console.log(document.cookie)
+    // if (this.props.location.hash === "#/signup") {
+    //     var style = {  background: "#333"};
+    // }
 
     return (
-      <div style={style}>
-        <Navbar loggedin={this.loggedin} />
-        {this.props.children}
+      <div>
+        <Navbar loggedin={this.state.loggedin} />
+          <Home />
         <Footer />
       </div>
     );

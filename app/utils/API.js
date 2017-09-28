@@ -7,9 +7,9 @@ const API = {
 		return axios.get("/api/search", { search });
 	},
 	//Retrieves all url's from the db
-	getUrls: function(cookie) {
-        return axios.get("/usersites/" + cookie);
-    },
+	getUrls: function() {
+		return axios.get("/usersites");
+	},
 	// Adds a new url to the db
 	addUrl: function(title, category, url, screenshot, note) {
 		console.log("add url: ");
@@ -26,7 +26,7 @@ const API = {
 		return axios.patch(`/api/urls/${_id}`, { favorited });
 	},
 	loadPage: function(cookie) {
-		return axios.get("/account/" + cookie);
+		return axios.get("/account");
 	}
 };
 

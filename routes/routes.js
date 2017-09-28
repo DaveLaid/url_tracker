@@ -154,7 +154,7 @@ app.post("/api/add", function(req, res) {
 
 
 // Route to see what user looks like WITH populating
-app.get("/usersites/:_id", function(req, res) {
+app.get("/usersites", function(req, res) {
   // Set up a query to find all of the entries in our User database..
   User.find({"_id": req.cookies.loggedin})
     // ..and string a call to populate the entry with the sites stored in the user's site array
@@ -187,7 +187,7 @@ app.get("/usersites/:_id", function(req, res) {
 
 
 // Route for getting some data about our user to be used client side
-app.get("/account/:_id", function(req, res) {
+app.get("/account", function(req, res) {
 
 User.findOne({_id: req.cookies.loggedin}, function(err, user) {
 

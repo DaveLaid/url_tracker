@@ -9,8 +9,8 @@ class Home extends Component {
     super();
     this.state = {
       urls: [],
-      cookies: "",
-      sites: []
+      sites: [],
+      cookies: ""
     };
     // Binding getUrls to our component since we'll be passing this
     // method to child components
@@ -18,29 +18,35 @@ class Home extends Component {
   }
   // Getting all Urls when the component mounts
   componentDidMount() {
-    this.setState({cookies: document.cookie.slice(9)})
 
-    API.loadPage(this.state.cookies).then((user) => {
-      this.setState({urls: user.urls})
+    API.getUrls().then((res) => {
+      this.setState({ urls: res.data });
+      console.log(res.data);
     });
+    // this.setState({cookies: document.cookie.slice(9)})
+
+    // API.loadPage(this.state.cookies).then((user) => {
+    //   console.log(user);
+    //   this.setState({urls: user.urls})
+    // });
     //this.setState({cookies: })
     //this.getUrls();
   }
   getUrls() {
-    API.getUrls().then((res) => {
-      this.setState({ sites: res.data });
-      console.log(res.data);
-    });
+    // API.getUrls().then((res) => {
+    //   this.setState({ sites: res.data });
+    //   console.log(res.data);
+    // });
   }
   // A helper method for rendering one panel for each url
   renderUrls() {
-    // return this.state.Urls.map(url => (
-    //   <Saved
-    //     url={url}
-    //     key={url._id}
-    //     getUrls={this.getUrls}
-    //   />
-    // ));
+    return this.state.urls.map(url => (
+      <Saved
+        url={url}
+        key={url._id}
+        getUrls={this.getUrls}
+      />
+    ));
   }
   render() {
 

@@ -28,17 +28,17 @@ app.use(logger("dev"));
 // Make public a static dir
 
 
-// app.use(express.static("./public"));
-app.use('/bundle.js', express.static("./public/bundle.js"));
+app.use(express.static("./public"));
+app.use('/bundle.js',express.static('./public/bundle.js'));
 // app.use(express.static("./public/index.html"));
 // app.use(express.static("./public/layoutForm.html"));
 // app.use(express.static("./public/login.html"));
 // app.use(express.static("./public/signup.html"));
 
-app.use('/css', express.static('./public/css'))
-app.use('/fonts', express.static('./public/fonts'))
-app.use('/img', express.static('./public/img'))
-app.use('/js', express.static('./public/js'))
+app.use('/css', express.static('./public/css'));
+app.use('/fonts', express.static('./public/fonts'));
+app.use('/img', express.static('./public/img'));
+app.use('/js', express.static('./public/js'));
 // app.use(express.static("./public/bundle.js"));
 
 app.use(cookieParser());
