@@ -10,6 +10,8 @@ var apiRoutes = require("./apiRoutes");
 
 var router = new express.Router();
 
+var urlController = require("../controllers/urlController");
+
 // Use the apiRoutes module for any routes starting with "/api"
 // router.use("/api", apiRoutes);
 
@@ -24,6 +26,12 @@ var router = new express.Router();
 
 // Routes =============================================================
 module.exports = function(app) {
+
+app.post("/api/add", function(req, res) {
+   console.log("test add!!!", req.body);
+   urlController.create(req, res);
+});
+
 
 // Bookmark Buddy home page
 app.get("/", function(req, res) {

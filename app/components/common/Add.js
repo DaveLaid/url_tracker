@@ -50,9 +50,18 @@ class Add extends Component {
     onAddSubmit(event) {
       event.preventDefault();
       console.log("in add - onAddSubmit ", this.state.title );
-      //API.addUrl(this.state.title, this.state.category, this.state.url, this.state.image, this.state.note);
+      API.addUrl(this.state.title, this.state.category, this.state.url, this.state.screenshot, this.state.note);
       //this.setState({ search: event.target.value });
+      this.props.onClose(false);
     }
+
+    componentDidUpdate(record) {
+      console.log("component!!! ", record);
+    }
+
+
+      
+    
 
 
 
