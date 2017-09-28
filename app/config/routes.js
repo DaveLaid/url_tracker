@@ -3,7 +3,8 @@ import { Route, IndexRoute, Router, browserHistory } from "react-router";
 
 import Main from "../components/Main";
 import Home from "../components/Home";
-import Signinup from "../components/Signinup";
+import Signup from "../components/Signup";
+import Login from "../components/Login";
 
 
 /*
@@ -20,8 +21,9 @@ const routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
     	<Route path="home" component={Home} />
-      <Route path="signup" component={Signinup} />
-    	<IndexRoute component={Signinup} />
+      <Route path="login" component={Login} />
+      <Route path="signup" component={Signup} />
+    	<IndexRoute component={Signup}/>
     </Route>
   </Router>
 );
