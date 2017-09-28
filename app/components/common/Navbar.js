@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import Add from "./Add";
+import API from "../../utils/API";
 
 {/*const Navbar = () => (*/}
 class Navbar extends Component {
@@ -24,9 +25,10 @@ class Navbar extends Component {
 	}
 
 	componentDidMount() {
-
+		this.setState({cookies: document.cookie.slice(9)})
 		// API.loadPage(this.state.page).then((res) => {
-  //     	this.setState({ page: res.data });
+  //     		this.setState({ page: res.data });
+  //     		console.log("Navbar componentDidMount ", res.data);
   //   	});
 	}
 
@@ -149,7 +151,7 @@ class Navbar extends Component {
 	}
 
 	render(){
-
+		console.log("Navbar!!!! ", this.props.hash);
 	    return (
 	    	<div>
 
