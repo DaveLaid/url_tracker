@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
 
-// var passport = require("../config/passport");
+
 var User = require("../models/User.js");
 var Site = require("../models/Site.js");
 
@@ -22,11 +22,6 @@ var router = new express.Router();
 
 
 
-
-
-
-
-
 // Routes =============================================================
 module.exports = function(app) {
 
@@ -42,7 +37,7 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   }
   else {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   }
 })
 
@@ -66,6 +61,7 @@ app.get("/logout", function(req, res) {
   // req.logout();
   res.redirect("/");
 });
+
 
 
 app.post('/signup', function(req, res) {
