@@ -35,8 +35,6 @@ module.exports = function(app) {
 
 // Bookmark Buddy home page
 app.get("/", function(req, res) {
-  console.log('get ROOT');
-  // res.sendFile(path.join(__dirname, "../public/index.html"));
 
  console.log('Cookies: ', req.cookies);
  User.findOne({_id: req.cookies.loggedin}, function(err, user) {
@@ -93,11 +91,33 @@ app.post('/signup', function(req, res) {
     password: req.body.password
   });
 
-  newUser.password = newUser.generateHash(newUser.password);
-  newUser.save();
-  res.sendFile(path.join(__dirname, "../public/index.html"));
   res.cookie("loggedin", newUser._id);
-  console.log("SUCCESS!  SIGNED UP - AND ASSIGNED COOKIE!")
+  newUser.password = newUser.generateHash(newUser.password);
+
+  newUser.save(function(error, doc) {
+    // Log any errors
+    if (error) {
+      console.log(error);
+      res.send(error);
+    }
+    // Otherwise, send the site back to the browser
+    // This will fire off the success function of the ajax request
+    else {
+
+      res.sendFile(path.join(__dirname, "../public/index.html"));
+      
+      console.log("SUCCESS!  SIGNED UP - AND ASSIGNED COOKIE!");
+    }
+
+
+
+
+    // newUser.save();
+   
+    
+  })
+
+  
 });
 
 
@@ -156,7 +176,7 @@ app.post("/api/add", function(req, res) {
 // Route to see what user looks like WITH populating
 app.get("/usersites", function(req, res) {
   // Set up a query to find all of the entries in our User database..
-  User.find({"_id": req.cookies.loggedin})
+  User.findOne({"_id": req.cookies.loggedin})
     // ..and string a call to populate the entry with the sites stored in the user's site array
     .populate("sites")
     // Now, execute that query
@@ -164,6 +184,7 @@ app.get("/usersites", function(req, res) {
       // Send any errors to the browser
       if (error) {
         res.send(error);
+        // res.sendFile(path.join(__dirname, "../public/signup.html"));
       }
       // Or, send our results to the browser, which will now include the sites stored in the specific user document
       else {
@@ -179,7 +200,9 @@ app.get("/usersites", function(req, res) {
           
           userUrls.push(allSites[i].url);
         }
-        res.send(userUrls);
+        // console.log(userUrls);
+        console.log(allSites);
+        // res.send(userUrls);
         res.send(allSites);
       }
     });
