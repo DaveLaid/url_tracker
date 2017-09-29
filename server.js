@@ -28,7 +28,7 @@ app.use(logger("dev"));
 // Make public a static dir
 
 
-// app.use(express.static("./public"));
+app.use(express.static("./public"));
 app.use('/bundle.js', express.static("./public/bundle.js"));
 
 app.use('/css', express.static('./public/css'));

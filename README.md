@@ -17,4 +17,4 @@ o	GET / POST routes to intake and display information.
 
 •	Tools / Languages needs: 
 o	HTML, CSS, JavaScript / jQuery, React, Node, Express, Bootstrap, MongoDB, Heroku, GitHub.
-http://url/to/img.png)
+
