@@ -62,7 +62,7 @@ class Navbar extends Component {
 				      </li></button>
 				     {/* <!-- log out -->*/}
 				      <button className="btn btn-primary btn-sm navBtnlogout"><li className="nav-item">
-				        <a href="#" className="nav-link navBtnText"><i className="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log out</a>
+				        <a href="/logout" className="nav-link navBtnText"><i className="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log out</a>
 				      </li></button>
 				    </ul>
 				  </div>

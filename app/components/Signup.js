@@ -154,21 +154,28 @@ window.onload = function() {
 				                      <h4>Sign Up</h4>
 				                    </div>
 				                    <div className="card-body">
-				                      <form action="#">
+
+				
+
+				                      <form class="signup" action="/signup" method="post">
 				                        <div className="form-group">
-				                          <label for="fullName">Full Name</label>
-				                          <input type="text" className="form-control" />
+				                          <label for="fullname">Full Name</label>
+				                          <input type="text" id="fullname" className="form-control x" required />
 				                        </div>
 				                        <div className="form-group">
 				                          <label for="email">Email</label>
-				                          <input type="text" className="form-control" />
+				                          <input type="email" id="email" className="form-control x" required />
 				                        </div>
 				                        <div className="form-group">
 				                          <label for="password">Password</label>
-				                          <input type="password" className="form-control" />
+				                          <input type="password" id="password" className="form-control x" required />
 				                        </div>
 				                        <input type="submit" className="btn btn-primary btn-block" value="Sign up" />
 				                      </form>
+
+
+
+
 				                    </div>
 				                  </div>
 				                </div>

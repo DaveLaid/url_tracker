@@ -7,7 +7,7 @@ const API = {
 		return axios.get("/api/search", { search });
 	},
 	//Retrieves all url's from the db
-	getUrls: function() {
+	getUrls: function(cookie) {
 		return axios.get("/usersites");
 	},
 	// Adds a new url to the db

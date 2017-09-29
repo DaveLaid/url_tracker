@@ -15,7 +15,7 @@ $(document).ready(function() {
       password: passwordInput.val().trim()
     };
 
-    console.log("fullname: " + userData.fullname);
+    // console.log("fullname: " + userData.fullname);
 
     if (!userData.fullname || !userData.email || !userData.password) {
       $("#alert .msg").text("All fields cannot be left empty. Please try again.");
