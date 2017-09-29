@@ -191,15 +191,15 @@ app.get("/usersites", function(req, res) {
         // res.send(doc); - this sends user info as well as user specific sites:
         // res.send(doc);
         // This displays all site data for user:
-        var allSites = doc[0].sites;
+        var allSites = doc[0];
         // res.send(doc[0].sites);
 
-        var userUrls = [];
+        // var userUrls = [];
 
-        for (var i = 0; i < allSites.length; i++) {
+        // for (var i = 0; i < allSites.length; i++) {
           
-          userUrls.push(allSites[i].url);
-        }
+        //   userUrls.push(allSites[i].url);
+        // }
         // console.log(userUrls);
         console.log(allSites);
         // res.send(userUrls);
