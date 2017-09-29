@@ -56,7 +56,7 @@ app.use(require('connect-flash')()); // see the next section
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://localhost/urlTracker');
+  mongoose.connect('mongodb://heroku_d0qbft9r:plvmklodqf294l7k36knunj5g3@ds155424.mlab.com:55424/heroku_d0qbft9r');
 }
 // mongoose.connect("mongodb://localhost/urlTracker");
 // mongoose.connect("mongodb://heroku_d0qbft9r:plvmklodqf294l7k36knunj5g3@ds155424.mlab.com:55424/heroku_d0qbft9r");
