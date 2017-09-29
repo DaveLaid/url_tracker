@@ -191,7 +191,9 @@ app.get("/usersites", function(req, res) {
         // res.send(doc); - this sends user info as well as user specific sites:
         // res.send(doc);
         // This displays all site data for user:
-        var allSites = doc[0];
+
+        var allSites = doc.sites;
+
         // res.send(doc[0].sites);
 
         // var userUrls = [];
