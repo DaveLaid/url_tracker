@@ -79,7 +79,8 @@ app.get("/logout", function(req, res) {
   res.clearCookie('loggedin');
   // res.send('Cookie deleted');
   // req.logout();
-  res.redirect("/");
+  res.sendFile(path.join(__dirname, "../public/signup.html"));
+  // res.redirect("/");
 });
 
 
@@ -182,12 +183,7 @@ app.get("/usersites", function(req, res) {
     // Now, execute that query
     .exec(function(error, doc) {
       // Send any errors to the browser
-      if (error) {
-        res.send(error);
-        // res.sendFile(path.join(__dirname, "../public/signup.html"));
-      }
-      // Or, send our results to the browser, which will now include the sites stored in the specific user document
-      else {
+      if (doc) {
         // res.send(doc); - this sends user info as well as user specific sites:
         // res.send(doc);
         // This displays all site data for user:
@@ -203,10 +199,25 @@ app.get("/usersites", function(req, res) {
         //   userUrls.push(allSites[i].url);
         // }
         // console.log(userUrls);
-        console.log(allSites);
         // res.send(userUrls);
+
+        console.log(allSites);
         res.send(allSites);
+        
       }
+      else if (!doc) {
+        
+        // res.redirect("/");
+        res.sendFile(path.join(__dirname, "../public/signup.html"));
+        console.log("USER IS NOT SIGNED UP - Send to signup page.");
+      // }
+      // Or, send our results to the browser, which will now include the sites stored in the specific user document
+      }
+      else if (error) {
+        //Send error if the above does not work to find out whether client is a user or not. 
+        res.send(error);
+      }
+      
     });
 });
 
